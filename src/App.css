@@ -27,6 +27,8 @@ td,th{
   text-align: center;
 }
 
+
+
 .coin-card{
   color: whitesmoke;
 }
@@ -45,4 +47,6 @@ a{
 
 .link:hover{
   color: rgb(27, 201, 27);
+  text-shadow: 0 1.5px 3px rgb(27, 201, 27);
+  
 }

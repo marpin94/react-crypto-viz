@@ -22,11 +22,13 @@ app.listen(port, () => {
 
 let api_key = process.env.API_KEY
 
-app.get('/Crypto', (req,res) => {
+app.get('/Crypto/:limit', (req,res) => {
+    let limit = req.params.limit
     axios
-        .get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=10&convert=USD',
+        .get(`https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=${limit}&convert=USD`,
         {
             headers:{'X-CMC_PRO_API_KEY': api_key}
         })
-        .then(coins => console.log(res.json(coins.data))) 
+        .then(coins => console.log(res.json(coins.data)))
+        .then(console.log(req.body))
 })

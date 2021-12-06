@@ -14,6 +14,7 @@ export const HomeDisplay = ({coinData}) => {
                 <th>Coin</th>
                 <th>Symbol</th>
                 <th>Latest Quote (USD)</th>
+                <th>Price Change (24H)</th>
             </tr>
             {coinData &&
                 coinData.map(coin => {
