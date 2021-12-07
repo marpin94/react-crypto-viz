@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom';
 
-import { PriceChart } from './PriceChart';
+
 
 export const Detail = ({coinData}) => {
 
@@ -10,7 +10,6 @@ export const Detail = ({coinData}) => {
 
     const {coin} = location.state
 
-    // const pageCoin = coinData.filter(coin => coin.id === params.id)
 
     useEffect(() => {
        console.log(coin)

@@ -1,29 +1,36 @@
 import React from 'react'
 import { CoinCard } from './CoinCard'
+import { Filter } from './Filter'
+
+import Table  from 'react-bootstrap/Table'
 
 
 
-
-export const HomeDisplay = ({coinData}) => {
+export const HomeDisplay = ({coinData, getData}) => {
 
 
     return (
-        <table className ='home-display'>
-            <tbody>
+        <>
+        <Filter getData={getData}/>
+        <Table className ='home-display'>
+            <thead>
             <tr>
-                <th>Coin</th>
+                <th className='tbl-sm'>Coin</th>
                 <th>Symbol</th>
                 <th>Latest Quote (USD)</th>
-                <th>Price Change (24H)</th>
+                <th className='tbl-sm'>Price Change (24H)</th>
             </tr>
+            </thead>
+            <tbody>
             {coinData &&
                 coinData.map(coin => {
                     return(
-                        <CoinCard coin={coin}/>
+                        <CoinCard key={coin.id} coin={coin}/>
                    )
                 })
             }
             </tbody>
-        </table>
+        </Table>
+        </>
     )
 }

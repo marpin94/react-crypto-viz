@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
+import Form  from 'react-bootstrap/Form'
 
 export const Filter = ({getData}) => {
 
@@ -7,21 +8,26 @@ export const Filter = ({getData}) => {
     const onChange = (e) => {
         setFilter(e.target.value)
     }
-    
-    useEffect(() => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
         getData(filter)
-    }, [filter])
+    }
+    
 
     return (
-        <div>
+        <div className='filter'>
+            
+            <Form onSubmit ={handleSubmit} className='filter-form'>
             <h3>View Top: </h3>
-            <form>
-                <select name='filterSelect' onChange={onChange}>
+                <Form.Select name='filterSelect' onChange={onChange}>
                     <option value = '10'>10</option>
                     <option value = '25'>25</option>
                     <option value = '50'>50</option>
-                </select>
-            </form>
+                </Form.Select>
+                <button type='submit'>Submit</button>
+            </Form>
         </div>
     )
 }
