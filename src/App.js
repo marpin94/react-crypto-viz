@@ -1,11 +1,13 @@
 import './App.css';
+
+
 import { useState, useEffect } from 'react';
 import { Nav } from './components/Nav';
 import {HomeDisplay} from './components/HomeDisplay'
 import { Detail } from './components/Detail';
 import {Routes, Route} from 'react-router-dom'
 
-import { Filter } from './components/Filter';
+
 
 
 function App() {

@@ -12,7 +12,7 @@ export const HomeDisplay = ({coinData, getData}) => {
     return (
         <>
         <Filter getData={getData}/>
-        <Table className ='home-display'>
+        <table className ='home-display'>
             <thead>
             <tr>
                 <th className='tbl-sm'>Coin</th>
@@ -30,7 +30,7 @@ export const HomeDisplay = ({coinData, getData}) => {
                 })
             }
             </tbody>
-        </Table>
+        </table>
         </>
     )
 }
